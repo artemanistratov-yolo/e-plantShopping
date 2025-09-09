@@ -42,6 +42,7 @@ const handleDecrement = (item) => {
 
 }
   const handleRemove = (item) => {
+    dispatch(removeItem(item.name))
   };
 
 
@@ -50,6 +51,11 @@ const handleDecrement = (item) => {
   alert('Functionality to be added for future reference');
 };  // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
+   // extract  value from cost string
+  const unitPrice = parseFloat(item.cost.substring(1)); 
+  // multiply by quantity
+  return item.quantity * unitPrice;
+
   };
 
   return (
